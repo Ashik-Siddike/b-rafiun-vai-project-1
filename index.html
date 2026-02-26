@@ -58,8 +58,8 @@
             <div class="flex items-center gap-6">
                 <!-- Mauritius Logo -->
                 <div class="w-[72px] h-[60px] flex items-center justify-center overflow-hidden">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Coat_of_arms_of_Mauritius.svg/200px-Coat_of_arms_of_Mauritius.svg.png"
-                        alt="Republic of Mauritius" class="h-full object-contain">
+                    <img src="assets/Coat+of+Arms+of+Mauritius.png" alt="Republic of Mauritius"
+                        class="h-full object-contain">
                 </div>
                 <div class="text-[17px] font-normal tracking-wide text-[#222]">
                     Mauritius Business Licensing Platform
@@ -128,104 +128,89 @@
 
     </header>
 
-    <!-- Marquee Notice Section -->
-    <div class="w-full bg-white overflow-hidden py-5 pt-8 z-40 relative">
-        <div class="marquee-wrapper">
-            <div class="marquee-content text-red-600 font-bold text-[15px]">
-                The system will be unavailable on Saturday 27th February from 10:00 to 14:00 for scheduled maintenance.
-            </div>
-        </div>
+    <!-- Red Banner Notice -->
+    <div class="w-full bg-white text-center py-5 relative z-40">
+        <p class="text-red-600 font-bold text-[14px]">
+            The system will be unavailable on 27th February, 2026 from 17.30 to 20:00
+        </p>
     </div>
 
-    <!-- Hero Section -->
-    <section class="w-full h-[300px] bg-[#f9c546] relative overflow-hidden flex flex-col justify-center items-center">
-        <!-- SVG Pattern Overlay -->
-        <div class="absolute inset-0 z-0 opacity-10 bg-hero-pattern"></div>
+    <!-- Main Container for Hero, Banner, and Action Blocks -->
+    <main class="w-full max-w-[1140px] mx-auto sm:px-0">
 
-        <div class="relative z-10 flex flex-col items-center w-full max-w-5xl px-4 mt-2">
-            <h1
-                class="text-white text-[32px] md:text-[38px] lg:text-[40px] font-light mb-8 text-center whitespace-nowrap">
-                Welcome to the National Electronic Licensing System of Mauritius
-            </h1>
+        <!-- Hero Section -->
+        <section
+            class="w-full h-[320px] relative overflow-hidden flex flex-col justify-center items-center bg-[#f0c14b]">
+            <div class="absolute inset-x-0 bottom-0 top-0 z-0 bg-no-repeat opacity-90"
+                style="background-image: url('assets/mountains.svg'); background-size: 420px 140px; background-position: center bottom;">
+            </div>
 
-            <button
-                class="bg-[#1a7ab7] hover:bg-[#15659b] text-white text-[15px] font-normal py-[9px] px-[28px] rounded-[4px] mb-8 transition-colors">
-                Apply for Permit
-            </button>
+            <div class="relative z-10 flex flex-col items-center w-full px-4 mt-2">
+                <h1 class="text-white text-[28px] font-normal mb-10 text-center drop-shadow-sm tracking-wide">
+                    Welcome to the National Electronic Licensing System of Mauritius
+                </h1>
 
-            <div class="w-full max-w-3xl flex flex-row mx-auto h-[45px] shadow-sm">
-                <input type="text"
-                    class="flex-grow h-full bg-[#f9f9f9] px-4 rounded-l-[2px] border-none focus:outline-none text-[14px] text-gray-700"
-                    placeholder="Search licensing platform">
                 <button
-                    class="bg-[#1a7ab7] hover:bg-[#15659b] text-white text-[15px] px-8 rounded-r-[2px] font-normal transition-colors">
-                    Search
+                    class="bg-[#1a7ab7] hover:bg-[#15659b] text-white text-[15px] font-medium py-[8px] px-[24px] rounded-[3px] mb-[40px] shadow-sm transition-colors">
+                    Apply for Permit
                 </button>
-            </div>
-        </div>
-    </section>
 
-    <!-- Content Banner Displayed Below (City Image with Title) -->
-    <section class="max-w-[1140px] mx-auto w-full mt-4 bg-white shadow-sm overflow-hidden h-auto px-0">
-        <div class="w-full relative h-[300px] sm:h-[400px] lg:h-[450px]">
-            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=2952&auto=format&fit=crop"
-                alt="Port Louis Night" class="w-full h-full object-cover">
-            <div class="absolute top-0 left-0 w-full p-6 text-white bg-gradient-to-b from-black/60 to-transparent">
-                <h2 class="text-[24px] font-normal drop-shadow-md">Mauritius Business Licensing Platform</h2>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4 Action Blocks -->
-    <section class="max-w-[1140px] mx-auto w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 mb-8 shadow-sm">
-        <!-- Agencies -->
-        <div
-            class="bg-[#e76b5a] text-white p-8 flex flex-col justify-between min-h-[160px] group cursor-pointer hover:opacity-90 transition-opacity">
-            <h3 class="text-[20px] font-normal mb-4">Agencies</h3>
-            <div class="flex items-center justify-between text-[14px]">
-                <span class="hover:underline">Browse permits by agency</span>
-                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-            </div>
-        </div>
-
-        <!-- Permits -->
-        <div
-            class="bg-[#505874] text-white p-8 flex flex-col justify-between min-h-[160px] group cursor-pointer hover:opacity-90 transition-opacity">
-            <h3 class="text-[20px] font-normal mb-4">Permits</h3>
-            <div class="flex items-center justify-between text-[14px]">
-                <span class="hover:underline">Browse permits by category</span>
-                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-            </div>
-        </div>
-
-        <!-- News -->
-        <div
-            class="bg-[#efb84c] text-white p-8 flex flex-col justify-between min-h-[160px] group cursor-pointer hover:opacity-90 transition-opacity">
-            <div class="flex flex-col gap-1 mb-4">
-                <h3 class="text-[20px] font-normal">News</h3>
-            </div>
-            <div class="flex flex-col gap-2 text-[14px]">
-                <div class="flex items-center justify-between">
-                    <span class="hover:underline">Morcellement Board</span>
-                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                </div>
-                <div class="flex items-center justify-between">
-                    <span class="hover:underline">News & Events</span>
-                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                <div class="w-full max-w-[500px] flex flex-row mx-auto h-[40px] shadow-md">
+                    <input type="text"
+                        class="flex-grow h-full bg-white px-4 rounded-l-[2px] border-none focus:outline-none text-[14px] text-gray-700 placeholder-gray-400"
+                        placeholder="Search licensing platform">
+                    <button
+                        class="bg-[#1a7ab7] hover:bg-[#15659b] text-white text-[14px] px-8 rounded-r-[2px] font-medium transition-colors">
+                        Search
+                    </button>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Notices -->
-        <div
-            class="bg-[#27936c] text-white p-8 flex flex-col justify-between min-h-[160px] group cursor-pointer hover:opacity-90 transition-opacity">
-            <h3 class="text-[20px] font-normal mb-4">Notices</h3>
-            <div class="flex items-center justify-between text-[14px]">
-                <span class="hover:underline">Supported Browsers</span>
-                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+        <!-- Content Banner Displayed Below (City Image with Title) -->
+        <section class="w-full mt-[5px] mb-[0px] relative h-[280px] overflow-hidden px-[5px]">
+            <img src="assets/caudan.jpg" alt="Mauritius Business Licensing Platform"
+                class="w-full h-full object-cover object-bottom">
+            <div
+                class="absolute top-0 left-[5px] right-[5px] p-5 bg-gradient-to-b from-[#333]/70 to-transparent h-[80px]">
+                <h2 class="text-[20px] text-white font-medium drop-shadow-md">Mauritius Business Licensing Platform</h2>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- 4 Action Blocks -->
+        <section class="w-full grid grid-cols-1 md:grid-cols-4 gap-[5px] mb-8 mt-[5px] px-[5px]">
+            <!-- Agencies -->
+            <div
+                class="bg-[#f06b59] hover:bg-[#db6252] transition-colors cursor-pointer text-white px-6 py-6 flex flex-col justify-start min-h-[220px]">
+                <h3 class="text-[22px] font-normal mb-[2px]">Agencies</h3>
+                <span class="text-[12px] opacity-100 tracking-wide mt-1">Browse permits by agency</span>
+            </div>
+
+            <!-- Permits -->
+            <div
+                class="bg-[#646b8a] hover:bg-[#5b617d] transition-colors cursor-pointer text-white px-6 py-6 flex flex-col justify-start min-h-[220px]">
+                <h3 class="text-[22px] font-normal mb-[2px]">Permits</h3>
+                <span class="text-[12px] opacity-100 tracking-wide mt-1">Browse permits by category</span>
+            </div>
+
+            <!-- News -->
+            <div
+                class="bg-[#f3bc47] hover:bg-[#e0ac41] transition-colors cursor-pointer text-white px-6 py-6 flex flex-col justify-start min-h-[220px]">
+                <h3 class="text-[22px] font-normal mb-5">News</h3>
+                <span class="text-[12px] opacity-100 mb-[8px] tracking-wide mt-1 hover:underline w-fit">Morcellement
+                    Board</span>
+                <span class="text-[12px] opacity-100 tracking-wide hover:underline w-fit">News & Events</span>
+            </div>
+
+            <!-- Notices -->
+            <div
+                class="bg-[#2a9d7d] hover:bg-[#268f72] transition-colors cursor-pointer text-white px-6 py-6 flex flex-col justify-start min-h-[220px]">
+                <h3 class="text-[22px] font-normal mb-5">Notices</h3>
+                <span class="text-[12px] opacity-100 tracking-wide mt-1 hover:underline w-fit">Supported Browsers</span>
+            </div>
+        </section>
+
+    </main>
 
     <!-- Main Footer -->
     <footer class="bg-[#3a3a3a] w-full pt-12 pb-6 text-[#dcdcdc] text-[14px] mt-auto">
@@ -237,8 +222,7 @@
                     <h4 class="text-white text-[16px] font-medium mb-4 uppercase">Success Story</h4>
                     <div class="bg-white p-2 rounded inline-block">
                         <!-- Placeholder for ISO Badge -->
-                        <img src="https://placehold.co/120x80/ffffff/505874?text=ISO+27001%0A2022" alt="MSECB Certified"
-                            class="block">
+                        <img src="assets/ISO-IEC-27001-2022+Red.png" alt="MSECB Certified" class="block w-[110px]">
                     </div>
                 </div>
 
