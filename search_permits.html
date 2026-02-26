@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Licensing Platform - Search Permits</title>
+    <!-- Google Fonts: Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            text: '#222222',
+                            primary: '#1a7ab7', // Buttons/CTA
+                            secondary: '#337ab7', // Nav links
+                            yellow: '#f9c546', // Hero background
+                            border: '#e0e0e0', // Light border
+                            searchBg: '#f9f9f9',
+                            white: '#ffffff',
+                        }
+                    },
+                    boxShadow: {
+                        'nav': '0 2px 5px rgba(0,0,0,0.1)',
+                        'subnav': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-sans text-brand-text antialiased bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Header Container -->
+    <header class="bg-brand-white relative z-50">
+        <!-- Top Row (Logo, Title, Search, Links) -->
+        <div class="max-w-screen-xl mx-auto px-4 flex items-center h-[90px] justify-between">
+
+            <!-- Left: Logo & Title -->
+            <div class="flex items-center gap-6">
+                <!-- Mauritius Logo -->
+                <div class="w-[72px] h-[60px] flex items-center justify-center overflow-hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Coat_of_arms_of_Mauritius.svg/200px-Coat_of_arms_of_Mauritius.svg.png"
+                        alt="Republic of Mauritius" class="h-full object-contain">
+                </div>
+                <div class="text-[17px] font-normal tracking-wide text-[#222]">
+                    Mauritius Business Licensing Platform
+                </div>
+            </div>
+
+            <!-- Right: Search, Register, Login -->
+            <div class="flex items-center space-x-6">
+                <!-- Search Form -->
+                <div class="relative w-[300px]">
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+                        <i class="fa-solid fa-search text-gray-400 text-sm"></i>
+                    </div>
+                    <input type="text" id="top-search"
+                        class="w-full bg-[#f9f9f9] border border-[#e0e0e0] rounded-[2px] text-[14px] text-gray-700 py-[6px] px-[12px] focus:outline-none focus:ring-1 focus:ring-[#337ab7] focus:border-[#337ab7] h-[35px]"
+                        placeholder="Search">
+                </div>
+
+                <div class="flex space-x-4 text-[14px] font-medium text-[#337ab7]">
+                    <a href="register.html" class="hover:text-[#1a7ab7] uppercase">REGISTER</a>
+                    <a href="login.html" class="hover:text-[#1a7ab7] uppercase">LOGIN</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Row (Navigation Items) -->
+        <nav class="border-t border-[#e0e0e0] shadow-nav relative">
+            <div class="max-w-screen-xl mx-auto px-4 h-[45px] flex items-center justify-center space-x-12">
+                <!-- Nav Item: Home -->
+                <a href="index.html"
+                    class="flex items-center text-[#337ab7] text-[14px] font-normal h-full px-4 border-b-[3px] border-transparent hover:border-[#337ab7] hover:text-[#1a7ab7] transition-all">
+                    <i class="fa-solid fa-home text-lg mr-2"></i>
+                    Home
+                </a>
+
+                <!-- Nav Item: Licensing -->
+                <a href="licensing.html"
+                    class="flex items-center text-[#337ab7] text-[14px] font-normal h-full px-4 border-b-[3px] border-transparent hover:border-[#337ab7] hover:text-[#1a7ab7] transition-all">
+                    <i class="fa-solid fa-file-lines text-lg mr-2"></i>
+                    Licensing
+                </a>
+
+                <!-- Nav Item: Search Permits (ACTIVE) -->
+                <a href="search_permits.html"
+                    class="flex items-center text-[#337ab7] text-[14px] font-normal h-full px-4 border-b-[3px] border-[#337ab7] hover:text-[#1a7ab7]">
+                    <i class="fa-solid fa-address-book text-lg mr-2"></i>
+                    Search Permits
+                </a>
+
+                <!-- Nav Item: News -->
+                <a href="news.html"
+                    class="flex items-center text-[#337ab7] text-[14px] font-normal h-full px-4 border-b-[3px] border-transparent hover:border-[#337ab7] hover:text-[#1a7ab7] transition-all">
+                    <i class="fa-solid fa-newspaper text-lg mr-2"></i>
+                    News
+                </a>
+
+                <!-- Nav Item: FAQ's & Notices -->
+                <a href="faqs.html"
+                    class="flex items-center text-[#337ab7] text-[14px] font-normal h-full px-4 border-b-[3px] border-transparent hover:border-[#337ab7] hover:text-[#1a7ab7] transition-all">
+                    <i class="fa-solid fa-circle-info text-lg mr-2"></i>
+                    FAQ's & Notices
+                </a>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- Main Content Area For Search Permits Page -->
+    <main class="flex-grow max-w-[1200px] mx-auto w-full px-4 py-8 flex flex-col items-start min-h-[500px]">
+
+        <h1 class="text-[20px] font-bold text-[#333] mb-6">Enter the details of the permit you are looking for</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-6">
+            <!-- Permit Number -->
+            <div class="flex flex-col">
+                <label class="text-[12px] text-gray-600 mb-1">Permit Number</label>
+                <input type="text" placeholder="Insert the permit number"
+                    class="border border-[#ccc] rounded-[3px] px-3 py-2 text-[14px] focus:outline-none focus:border-[#337ab7] bg-[#f9f9f9] shadow-inner h-[38px]">
+            </div>
+
+            <!-- Issued Date -->
+            <div class="flex flex-col relative">
+                <label class="text-[12px] text-gray-600 mb-1">Issued Date</label>
+                <input type="text" placeholder="Select a Date"
+                    class="border border-[#ccc] rounded-[3px] px-3 py-2 pr-10 text-[14px] focus:outline-none focus:border-[#337ab7] bg-[#f9f9f9] shadow-inner h-[38px]">
+                <div class="absolute right-3 top-[26px] text-gray-500">
+                    <i class="fa-solid fa-calendar-days"></i>
+                </div>
+            </div>
+
+            <!-- Permit Holder -->
+            <div class="flex flex-col">
+                <label class="text-[12px] text-gray-600 mb-1">Permit Holder</label>
+                <input type="text" placeholder="Insert the permit holder name."
+                    class="border border-[#ccc] rounded-[3px] px-3 py-2 text-[14px] focus:outline-none focus:border-[#337ab7] bg-[#f9f9f9] shadow-inner h-[38px]">
+            </div>
+        </div>
+
+        <button
+            class="border border-[#337ab7] text-[#337ab7] hover:bg-[#337ab7] hover:text-white transition-colors rounded-[3px] px-6 py-[6px] text-[14px]">
+            Search
+        </button>
+
+    </main>
+
+    <!-- Main Footer -->
+    <footer class="bg-[#3a3a3a] w-full pt-12 pb-6 text-[#dcdcdc] text-[14px]">
+        <div class="max-w-screen-xl mx-auto px-4">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12 border-b border-gray-600 pb-10">
+                <!-- Col 1: Success Story -->
+                <div>
+                    <h4 class="text-white text-[16px] font-medium mb-4 uppercase">Success Story</h4>
+                    <div class="bg-white p-2 rounded inline-block">
+                        <!-- Placeholder for ISO Badge -->
+                        <img src="https://placehold.co/120x80/ffffff/505874?text=ISO+27001%0A2022" alt="MSECB Certified"
+                            class="block">
+                    </div>
+                </div>
+
+                <!-- Col 2: Government Directory -->
+                <div>
+                    <h4 class="text-white text-[16px] font-medium mb-4 uppercase">Government Directory</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Ministries</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Departments</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Parastatal Organisations</a>
+                        </li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Other Bodies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Legislations -->
+                <div>
+                    <h4 class="text-white text-[16px] font-medium mb-4 uppercase">Legislations</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Justice & Defence</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Explore Mauritius -->
+                <div>
+                    <h4 class="text-white text-[16px] font-medium mb-4 uppercase">Explore Mauritius</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">History</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5: Media -->
+                <div>
+                    <h4 class="text-white text-[16px] font-medium mb-4 uppercase">Media</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Communiqués</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sub Footer Links -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-[13px] gap-4">
+                <div class="flex flex-wrap gap-x-6 gap-y-2">
+                    <a href="#" class="hover:text-white transition-colors">News</a>
+                    <a href="#" class="hover:text-white transition-colors">E-Services</a>
+                    <a href="#" class="hover:text-white transition-colors">ISMS Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Supplier Relationship Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Contact Us</a>
+                </div>
+
+                <div class="text-right">
+                    <span class="mr-2">Helpdesk Contact:</span>
+                    <a href="#" class="text-brand-yellow hover:underline uppercase font-medium">CLICK HERE</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Base Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>

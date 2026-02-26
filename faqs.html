@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Licensing Platform - FAQ's & Notices</title>
+    <!-- Google Fonts: Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            text: '#222222',
+                            primary: '#1a7ab7', // Buttons/CTA
+                            secondary: '#337ab7', // Nav links
+                            yellow: '#f9c546', // Hero background
+                            border: '#e0e0e0', // Light border
+                            searchBg: '#f9f9f9',
+                            white: '#ffffff',
+                        }
+                    },
+                    boxShadow: {
+                        'nav': '0 2px 5px rgba(0,0,0,0.1)',
+                        'subnav': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-sans text-brand-text antialiased bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Header Container -->
+    <header class="bg-brand-white relative z-50">
+        <!-- Top Row (Logo, Title, Search, Links) -->
+        <div class="max-w-screen-xl mx-auto px-4 flex items-center h-[90px] justify-between">
+
+            <!-- Left: Logo & Title -->
+            <div class="flex items-center gap-6">
+                <!-- Mauritius Logo -->
+                <div class="w-[72px] h-[60px] flex items-center justify-center overflow-hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Coat_of_arms_of_Mauritius.svg/200px-Coat_of_arms_of_Mauritius.svg.png"
+                        alt="Republic of Mauritius" class="h-full object-contain">
+                </div>
+                <div class="text-[17px] font-normal tracking-wide text-[#222]">
+                    Mauritius Business Licensing Platform
+                </div>
+            </div>
+
+            <!-- Right: Search, Register, Login -->
+            <div class="flex items-center space-x-6">
+                <!-- Search Form -->
+                <div class="relative w-[300px]">
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+                        <i class="fa-solid fa-search text-gray-400 text-sm"></i>
+                    </div>
+                    <input type="text" id="top-search"
+                        class="w-full bg-[#f9f9f9] border border-[#e0e0e0] rounded-[2px] text-[14px] text-gray-700 py-[6px] px-[12px] focus:outline-none focus:ring-1 focus:ring-[#337ab7] focus:border-[#337ab7] h-[35px]"
+                        placeholder="Search">
+                </div>
+
+                <div class="flex space-x-4 text-[14px] font-medium text-[#337ab7]">
+                    <a href="register.html" class="hover:text-[#1a7ab7] uppercase">REGISTER</a>
+                    <a href="login.html" class="hover:text-[#1a7ab7] uppercase">LOGIN</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Row (Navigation Items) -->
+        <nav class="border-t border-[#e0e0e0] shadow-nav relative">
+            <div class="max-w-screen-xl mx-auto px-4 h-[45px] flex items-center justify-center space-x-12">
+                <!-- Nav Item: Home -->
+                <a href="index.html"
+                    class="flex items-center text-[#337ab7] text-[14px] font-normal h-full px-4 border-b-[3px] border-transparent hover:border-[#337ab7] hover:text-[#1a7ab7] transition-all">
+                    <i class="fa-solid fa-home text-lg mr-2"></i>
+                    Home
+                </a>
+
+                <!-- Nav Item: Licensing -->
+                <a href="licensing.html"
+                    class="flex items-center text-[#337ab7] text-[14px] font-normal h-full px-4 border-b-[3px] border-transparent hover:border-[#337ab7] hover:text-[#1a7ab7] transition-all">
+                    <i class="fa-solid fa-file-lines text-lg mr-2"></i>
+                    Licensing
+                </a>
+
+                <!-- Nav Item: Search Permits -->
+                <a href="search_permits.html"
+                    class="flex items-center text-[#337ab7] text-[14px] font-normal h-full px-4 border-b-[3px] border-transparent hover:border-[#337ab7] hover:text-[#1a7ab7] transition-all">
+                    <i class="fa-solid fa-address-book text-lg mr-2"></i>
+                    Search Permits
+                </a>
+
+                <!-- Nav Item: News -->
+                <a href="news.html"
+                    class="flex items-center text-[#337ab7] text-[14px] font-normal h-full px-4 border-b-[3px] border-transparent hover:border-[#337ab7] hover:text-[#1a7ab7] transition-all">
+                    <i class="fa-solid fa-newspaper text-lg mr-2"></i>
+                    News
+                </a>
+
+                <!-- Nav Item: FAQ's & Notices (ACTIVE) -->
+                <a href="faqs.html"
+                    class="flex items-center text-[#337ab7] text-[14px] font-normal h-full px-4 border-b-[3px] border-[#337ab7] bg-gray-100 hover:text-[#1a7ab7]">
+                    <i class="fa-solid fa-circle-info text-lg mr-2"></i>
+                    FAQ's & Notices
+                </a>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- Main Content Area For FAQ's & Notices Page -->
+    <main class="flex-grow max-w-[1200px] mx-auto w-full px-4 py-8 flex flex-col items-center min-h-[500px]">
+
+
+        <!-- Top Nav Controls -->
+        <div class="w-full flex justify-between items-start mb-12 relative">
+            <div class="mx-auto flex rounded border border-[#1a7ab7] overflow-hidden">
+                <button id="btn-faqs" onclick="showFaqTab('faqs')" class="bg-[#1a7ab7] text-white px-8 py-2 text-[14px] font-normal outline-none transition-colors">FAQs</button>
+                <button id="btn-didyouknow" onclick="showFaqTab('didyouknow')" class="bg-white border-l border-[#1a7ab7] text-[#1a7ab7] px-8 py-2 text-[14px] font-normal outline-none hover:bg-gray-50 transition-colors">Did You Know</button>
+                <button id="btn-notices" onclick="showFaqTab('notices')" class="bg-white border-l border-[#1a7ab7] text-[#1a7ab7] px-8 py-2 text-[14px] font-normal outline-none hover:bg-gray-50 transition-colors">Notices</button>
+            </div>
+
+            <a href="#" class="absolute right-0 top-1/2 -translate-y-1/2 text-[#337ab7] hover:text-[#1a7ab7] underline text-[14px] font-medium">Request NELS Helpdesk Support</a>
+        </div>
+
+        <!-- FAQs Tab Content -->
+        <div id="tab-faqs" class="w-full text-left">
+            <h2 class="text-[22px] font-bold text-[#333] mb-6">Morcellement Permit</h2>
+            <div class="flex flex-col space-y-3 w-full">
+
+                <div class="border border-[#e3e3e3] rounded-[4px] overflow-hidden">
+                    <div class="bg-white p-4 flex justify-between items-center cursor-pointer hover:bg-[#f9f9f9] transition-colors" onclick="toggleAccordion('faq-1')">
+                        <span class="text-[#337ab7] text-[15px] font-bold">Do I need clearance from the CEB and CWA when my land is built up?</span>
+                        <i class="fa-solid fa-angle-right text-[#337ab7]" id="icon-faq-1"></i>
+                    </div>
+                    <div id="faq-1" class="hidden bg-white px-4 pb-4 border-t border-[#e3e3e3] text-[#333] text-[13px] pt-4">
+                        This is a requirement from the CEB and CWA as per their regulations.
+                    </div>
+                </div>
+                <div class="border border-[#e3e3e3] rounded-[4px] overflow-hidden">
+                    <div class="bg-white p-4 flex justify-between items-center cursor-pointer hover:bg-[#f9f9f9] transition-colors" onclick="toggleAccordion('faq-2')">
+                        <span class="text-[#337ab7] text-[15px] font-bold">How long will it take to obtain the Morcellement Permit?</span>
+                        <i class="fa-solid fa-angle-right text-[#337ab7]" id="icon-faq-2"></i>
+                    </div>
+                    <div id="faq-2" class="hidden bg-white px-4 pb-4 border-t border-[#e3e3e3] text-[#333] text-[13px] pt-4">
+                        For the issuance of a Letter of Intent: A minimum of 10 to 12 weeks if all the documents are in order and the application is recommended by the stakeholders and approved by the Minister.<br><br>Thereafter, the applicant will have a time frame of three years for the submission of clearances as per the Letter of Intent.
+                    </div>
+                </div>
+                <div class="border border-[#e3e3e3] rounded-[4px] overflow-hidden">
+                    <div class="bg-white p-4 flex justify-between items-center cursor-pointer hover:bg-[#f9f9f9] transition-colors" onclick="toggleAccordion('faq-3')">
+                        <span class="text-[#337ab7] text-[15px] font-bold">How often are Board Meetings held?</span>
+                        <i class="fa-solid fa-angle-right text-[#337ab7]" id="icon-faq-3"></i>
+                    </div>
+                    <div id="faq-3" class="hidden bg-white px-4 pb-4 border-t border-[#e3e3e3] text-[#333] text-[13px] pt-4">
+                        Every two (2) weeks.
+                    </div>
+                </div>
+                <div class="border border-[#e3e3e3] rounded-[4px] overflow-hidden">
+                    <div class="bg-white p-4 flex justify-between items-center cursor-pointer hover:bg-[#f9f9f9] transition-colors" onclick="toggleAccordion('faq-4')">
+                        <span class="text-[#337ab7] text-[15px] font-bold">Is withdrawal of an application possible?</span>
+                        <i class="fa-solid fa-angle-right text-[#337ab7]" id="icon-faq-4"></i>
+                    </div>
+                    <div id="faq-4" class="hidden bg-white px-4 pb-4 border-t border-[#e3e3e3] text-[#333] text-[13px] pt-4">
+                        An application can be requested to be withdrawn by an applicant, subject to valid justifications, provided in a letter or email that has been signed by all the owners.<br><br>No processing fee will be refunded upon withdrawal.
+                    </div>
+                </div>
+                <div class="border border-[#e3e3e3] rounded-[4px] overflow-hidden">
+                    <div class="bg-white p-4 flex justify-between items-center cursor-pointer hover:bg-[#f9f9f9] transition-colors" onclick="toggleAccordion('faq-5')">
+                        <span class="text-[#337ab7] text-[15px] font-bold">Plans - Dimensions</span>
+                        <i class="fa-solid fa-angle-right text-[#337ab7]" id="icon-faq-5"></i>
+                    </div>
+                    <div id="faq-5" class="hidden bg-white px-4 pb-4 border-t border-[#e3e3e3] text-[#333] text-[13px] pt-4">
+                        All plans to be submitted with the application for subdivision/excision that are larger than A3 should be submitted in hardcopies (14 originals and 15 copies) and should be submitted in autocad on DVD.
+                    </div>
+                </div>
+                <div class="border border-[#e3e3e3] rounded-[4px] overflow-hidden">
+                    <div class="bg-white p-4 flex justify-between items-center cursor-pointer hover:bg-[#f9f9f9] transition-colors" onclick="toggleAccordion('faq-6')">
+                        <span class="text-[#337ab7] text-[15px] font-bold">Plans - Requirements</span>
+                        <i class="fa-solid fa-angle-right text-[#337ab7]" id="icon-faq-6"></i>
+                    </div>
+                    <div id="faq-6" class="hidden bg-white px-4 pb-4 border-t border-[#e3e3e3] text-[#333] text-[13px] pt-4">
+                        All plans to be submitted with the application for subdivision/excision should be DRAWN TO SCALE.
+                    </div>
+                </div>
+                <div class="border border-[#e3e3e3] rounded-[4px] overflow-hidden">
+                    <div class="bg-white p-4 flex justify-between items-center cursor-pointer hover:bg-[#f9f9f9] transition-colors" onclick="toggleAccordion('faq-7')">
+                        <span class="text-[#337ab7] text-[15px] font-bold">Which fees do I have to pay at the Morcellement Unit?</span>
+                        <i class="fa-solid fa-angle-right text-[#337ab7]" id="icon-faq-7"></i>
+                    </div>
+                    <div id="faq-7" class="hidden bg-white px-4 pb-4 border-t border-[#e3e3e3] text-[#333] text-[13px] pt-4">
+                        A processing fee at the time of application and a Morcellement fee prior to receiving the Morcellement Permit. The fees are available in the guideline.
+                    </div>
+                </div>
+                <div class="border border-[#e3e3e3] rounded-[4px] overflow-hidden">
+                    <div class="bg-white p-4 flex justify-between items-center cursor-pointer hover:bg-[#f9f9f9] transition-colors" onclick="toggleAccordion('faq-8')">
+                        <span class="text-[#337ab7] text-[15px] font-bold">Why do I have to pay Wastewater Management Authority fees?</span>
+                        <i class="fa-solid fa-angle-right text-[#337ab7]" id="icon-faq-8"></i>
+                    </div>
+                    <div id="faq-8" class="hidden bg-white px-4 pb-4 border-t border-[#e3e3e3] text-[#333] text-[13px] pt-4">
+                        Payment is mandatory as per S25 of the Wastewater Management Authority Act 2000
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Did You Know Tab Content -->
+        <div id="tab-didyouknow" class="w-full text-left hidden">
+            <h2 class="text-[22px] font-bold text-[#333] mb-6">Morcellement Permit</h2>
+            <div class="flex flex-col space-y-3 w-full">
+
+                <div class="border border-[#e3e3e3] rounded-[4px] overflow-hidden">
+                    <div class="bg-[#f5f5f5] p-4 flex justify-between items-center cursor-pointer hover:bg-[#eee] transition-colors" onclick="toggleAccordion('dyk-1')">
+                        <span class="text-[#777] text-[15px] font-medium">Cash office opening Hours</span>
+                        <i class="fa-solid fa-angle-down text-[#888]" id="icon-dyk-1"></i>
+                    </div>
+                    <div id="dyk-1" class="hidden bg-white px-4 pb-4 border-t border-[#e3e3e3] text-[#333] text-[13px] pt-4">
+                        The Cash Office of the Ministry of Housing and Lands, which is located on the second floor of the Ebene Tower, is open from 08:45-14:30 during weekdays.
+                    </div>
+                </div>
+                <div class="border border-[#e3e3e3] rounded-[4px] overflow-hidden">
+                    <div class="bg-[#f5f5f5] p-4 flex justify-between items-center cursor-pointer hover:bg-[#eee] transition-colors" onclick="toggleAccordion('dyk-2')">
+                        <span class="text-[#777] text-[15px] font-medium">What do I do after I receive the Morcellement Permit?</span>
+                        <i class="fa-solid fa-angle-down text-[#888]" id="icon-dyk-2"></i>
+                    </div>
+                    <div id="dyk-2" class="hidden bg-white px-4 pb-4 border-t border-[#e3e3e3] text-[#333] text-[13px] pt-4">
+                        After receipt of the Morcellement Permit, you should apply for a PIN Certificate at the Cadastre Unit and contact your surveyor for a survey report and thereafter a Notary for obtention of a title deed.
+                    </div>
+                </div>
+                <div class="border border-[#e3e3e3] rounded-[4px] overflow-hidden">
+                    <div class="bg-[#f5f5f5] p-4 flex justify-between items-center cursor-pointer hover:bg-[#eee] transition-colors" onclick="toggleAccordion('dyk-3')">
+                        <span class="text-[#777] text-[15px] font-medium">What is the purpose of the Morcellement Unit?</span>
+                        <i class="fa-solid fa-angle-down text-[#888]" id="icon-dyk-3"></i>
+                    </div>
+                    <div id="dyk-3" class="hidden bg-white px-4 pb-4 border-t border-[#e3e3e3] text-[#333] text-[13px] pt-4">
+                        The Morcellement Unit is mainly responsible for processing of applications for morcellement, i.e. the division of a plot of land into two or more lots and the excision of land.
+                    </div>
+                </div>
+                <div class="border border-[#e3e3e3] rounded-[4px] overflow-hidden">
+                    <div class="bg-[#f5f5f5] p-4 flex justify-between items-center cursor-pointer hover:bg-[#eee] transition-colors" onclick="toggleAccordion('dyk-4')">
+                        <span class="text-[#777] text-[15px] font-medium">Who should sign the application form?</span>
+                        <i class="fa-solid fa-angle-down text-[#888]" id="icon-dyk-4"></i>
+                    </div>
+                    <div id="dyk-4" class="hidden bg-white px-4 pb-4 border-t border-[#e3e3e3] text-[#333] text-[13px] pt-4">
+                        The application form being online, the applicant should upload an authorisation letter, duly signed by all owners, giving permission to a third party or one of the owners to apply on their behalf.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notices Tab Content -->
+        <div id="tab-notices" class="w-full flex flex-col items-start hidden">
+
+        <div class="w-full text-left max-w-[800px]">
+            <h2 class="text-[22px] font-bold text-[#333] mb-1">Supported Browsers</h2>
+            <p class="text-[13px] text-[#222] mb-4">December 27, 2018</p>
+            <a href="#" class="text-[14px] text-[#337ab7] hover:underline mb-8 block font-medium">Read More</a>
+            
+            <div class="flex items-center text-[14px] mt-12 mb-4">
+                <button class="px-[14px] py-[6px] border border-[#ddd] bg-white text-[#337ab7] hover:bg-[#eee] transition-colors rounded-l-[3px]">First</button>
+                <button class="px-[14px] py-[6px] border border-[#ddd] bg-white text-[#337ab7] hover:bg-[#eee] transition-colors border-l-0">Previous</button>
+                <button class="px-[14px] py-[6px] border border-[#ddd] bg-[#f5f5f5] text-[#999] border-l-0 cursor-not-allowed">1</button>
+                <button class="px-[14px] py-[6px] border border-[#ddd] bg-white text-[#337ab7] hover:bg-[#eee] transition-colors border-l-0">Next</button>
+                <button class="px-[14px] py-[6px] border border-[#ddd] bg-white text-[#337ab7] hover:bg-[#eee] transition-colors border-l-0 rounded-r-[3px]">Last</button>
+            </div>
+        </div>
+
+        </div>
+
+    </main>
+
+    <!-- Main Footer -->
+    <footer class="bg-[#3a3a3a] w-full pt-12 pb-6 text-[#dcdcdc] text-[14px] mt-auto">
+        <div class="max-w-screen-xl mx-auto px-4">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12 border-b border-gray-600 pb-10">
+                <!-- Col 1: Success Story -->
+                <div>
+                    <h4 class="text-white text-[16px] font-medium mb-4 uppercase">Success Story</h4>
+                    <div class="bg-white p-2 rounded inline-block">
+                        <!-- Placeholder for ISO Badge -->
+                        <img src="https://placehold.co/120x80/ffffff/505874?text=ISO+27001%0A2022" alt="MSECB Certified"
+                            class="block">
+                    </div>
+                </div>
+
+                <!-- Col 2: Government Directory -->
+                <div>
+                    <h4 class="text-white text-[16px] font-medium mb-4 uppercase">Government Directory</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Ministries</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Departments</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Parastatal Organisations</a>
+                        </li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Other Bodies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Legislations -->
+                <div>
+                    <h4 class="text-white text-[16px] font-medium mb-4 uppercase">Legislations</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Justice & Defence</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Explore Mauritius -->
+                <div>
+                    <h4 class="text-white text-[16px] font-medium mb-4 uppercase">Explore Mauritius</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">History</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5: Media -->
+                <div>
+                    <h4 class="text-white text-[16px] font-medium mb-4 uppercase">Media</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Communiqués</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sub Footer Links -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-[13px] gap-4">
+                <div class="flex flex-wrap gap-x-6 gap-y-2">
+                    <a href="#" class="hover:text-white transition-colors">News</a>
+                    <a href="#" class="hover:text-white transition-colors">E-Services</a>
+                    <a href="#" class="hover:text-white transition-colors">ISMS Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Supplier Relationship Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Contact Us</a>
+                </div>
+
+                <div class="text-right">
+                    <span class="mr-2">Helpdesk Contact:</span>
+                    <a href="#" class="text-brand-yellow hover:underline uppercase font-medium">CLICK HERE</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Base Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>

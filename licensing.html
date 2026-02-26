@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Licensing Platform - Licensing</title>
+    <!-- Google Fonts: Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            text: '#222222',
+                            primary: '#1a7ab7', // Buttons/CTA
+                            secondary: '#337ab7', // Nav links
+                            yellow: '#f9c546', // Hero background
+                            border: '#e0e0e0', // Light border
+                            searchBg: '#f9f9f9',
+                            white: '#ffffff',
+                        }
+                    },
+                    boxShadow: {
+                        'nav': '0 2px 5px rgba(0,0,0,0.1)',
+                        'subnav': '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="font-sans text-brand-text antialiased bg-gray-50 flex flex-col min-h-screen">
+
+    <!-- Header Container -->
+    <header class="bg-brand-white relative z-50">
+        <!-- Top Row (Logo, Title, Search, Links) -->
+        <div class="max-w-screen-xl mx-auto px-4 flex items-center h-[90px] justify-between">
+
+            <!-- Left: Logo & Title -->
+            <div class="flex items-center gap-6">
+                <!-- Mauritius Logo -->
+                <div class="w-[72px] h-[60px] flex items-center justify-center overflow-hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Coat_of_arms_of_Mauritius.svg/200px-Coat_of_arms_of_Mauritius.svg.png"
+                        alt="Republic of Mauritius" class="h-full object-contain">
+                </div>
+                <div class="text-[17px] font-normal tracking-wide text-[#222]">
+                    Mauritius Business Licensing Platform
+                </div>
+            </div>
+
+            <!-- Right: Search, Register, Login -->
+            <div class="flex items-center space-x-6">
+                <!-- Search Form -->
+                <div class="relative w-[300px]">
+                    <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+                        <i class="fa-solid fa-search text-gray-400 text-sm"></i>
+                    </div>
+                    <input type="text" id="top-search"
+                        class="w-full bg-[#f9f9f9] border border-[#e0e0e0] rounded-[2px] text-[14px] text-gray-700 py-[6px] px-[12px] focus:outline-none focus:ring-1 focus:ring-[#337ab7] focus:border-[#337ab7] h-[35px]"
+                        placeholder="Search">
+                </div>
+
+                <div class="flex space-x-4 text-[14px] font-medium text-[#337ab7]">
+                    <a href="register.html" class="hover:text-[#1a7ab7] uppercase">REGISTER</a>
+                    <a href="login.html" class="hover:text-[#1a7ab7] uppercase">LOGIN</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Row (Navigation Items) -->
+        <nav class="border-t border-[#e0e0e0] shadow-nav relative">
+            <div class="max-w-screen-xl mx-auto px-4 h-[45px] flex items-center justify-center space-x-12">
+                <!-- Nav Item: Home -->
+                <a href="index.html"
+                    class="flex items-center text-[#337ab7] text-[14px] font-normal h-full px-4 border-b-[3px] border-transparent hover:border-[#337ab7] hover:text-[#1a7ab7] transition-all">
+                    <i class="fa-solid fa-home text-lg mr-2"></i>
+                    Home
+                </a>
+
+                <!-- Nav Item: Licensing (ACTIVE) -->
+                <a href="licensing.html"
+                    class="flex items-center text-[#337ab7] text-[14px] font-normal h-full px-4 border-b-[3px] border-[#337ab7] hover:text-[#1a7ab7]">
+                    <i class="fa-solid fa-file-lines text-lg mr-2"></i>
+                    Licensing
+                </a>
+
+                <!-- Nav Item: Search Permits -->
+                <a href="search_permits.html"
+                    class="flex items-center text-[#337ab7] text-[14px] font-normal h-full px-4 border-b-[3px] border-transparent hover:border-[#337ab7] hover:text-[#1a7ab7] transition-all">
+                    <i class="fa-solid fa-address-book text-lg mr-2"></i>
+                    Search Permits
+                </a>
+
+                <!-- Nav Item: News -->
+                <a href="news.html"
+                    class="flex items-center text-[#337ab7] text-[14px] font-normal h-full px-4 border-b-[3px] border-transparent hover:border-[#337ab7] hover:text-[#1a7ab7] transition-all">
+                    <i class="fa-solid fa-newspaper text-lg mr-2"></i>
+                    News
+                </a>
+
+                <!-- Nav Item: FAQ's & Notices -->
+                <a href="faqs.html"
+                    class="flex items-center text-[#337ab7] text-[14px] font-normal h-full px-4 border-b-[3px] border-transparent hover:border-[#337ab7] hover:text-[#1a7ab7] transition-all">
+                    <i class="fa-solid fa-circle-info text-lg mr-2"></i>
+                    FAQ's & Notices
+                </a>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- Main Content Area For Licensing Page -->
+    <main class="flex-grow max-w-screen-xl mx-auto w-full px-16 py-12 flex flex-col items-start min-h-[500px]">
+
+                
+        <!-- Top Nav Controls -->
+        <div class="w-full max-w-[900px] mb-12 relative flex items-center justify-center">
+            <h1 class="text-[32px] font-light text-[#444] absolute left-0" style="top: -6px;">Permits</h1>
+
+            <div class="flex rounded border border-[#1a7ab7] overflow-hidden drop-shadow-sm bg-white">
+                <button id="btn-category" onclick="showTab('category')" class="bg-[#1a7ab7] text-white px-8 py-[6px] text-[14px] font-medium outline-none transition-colors border-r border-[#1a7ab7]">Category</button>
+                <button id="btn-agency" onclick="showTab('agency')" class="bg-white text-[#1a7ab7] px-8 py-[6px] text-[14px] font-medium outline-none hover:bg-gray-50 transition-colors">Agency</button>
+            </div>
+        </div>
+
+        <!-- Permit Categories List -->
+        <div id="tab-category" class="w-full max-w-[900px]">
+            <ul class="w-full">
+
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('cat-1')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-cat-1"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Construction and Land Development</span>
+                    </div>
+                    <div id="cat-1" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Building and Land Use Permit</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Land Conversion Permit</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Morcellement Permit</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Occupation Certificate</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Property Acquisition</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('cat-2')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-cat-2"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Education</span>
+                    </div>
+                    <div id="cat-2" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">MQA - Authorisation of Change for Training Institution</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information
+List of Registered Training Institution</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">MQA - New Registration for Training Institution</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information
+List of Registered Training Institution</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">MQA - Renewal of Registration for Training Institution</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information
+List of Registered Training Institution</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('cat-3')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-cat-3"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Environment</span>
+                    </div>
+                    <div id="cat-3" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Environment Impact Assessment (EIA) Licence</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information
+EIA Report
+Decision on EIA Applications</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Preliminary Environment Report (PER) Approval</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information
+PER Report
+Decision on PER Applications</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('cat-4')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-cat-4"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Health</span>
+                    </div>
+                    <div id="cat-4" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">DCCB - License to trade In Dangerous Chemicals</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">DCCB - Registration of Extremely Dangerous Chemical</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('cat-5')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-cat-5"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Manufacturing</span>
+                    </div>
+                    <div id="cat-5" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Excise License</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('cat-6')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-cat-6"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Safety</span>
+                    </div>
+                    <div id="cat-6" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Fire Certificate</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Fire Safety Plan</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('cat-7')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-cat-7"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Schemes</span>
+                    </div>
+                    <div id="cat-7" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Film Rebate Scheme - Mauritius</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Freight Rebate Scheme</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Support for Trade Promotion and Marketing Scheme</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Support for Trade Promotion and Marketing Scheme - Agro</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('cat-8')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-cat-8"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Tourism</span>
+                    </div>
+                    <div id="cat-8" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Pleasure Craft Licence</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('cat-9')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-cat-9"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Work & Live</span>
+                    </div>
+                    <div id="cat-9" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Dependent - Occupation Permit</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Occupation/Residence Permit</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Premium Visa</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Request for Skilled Workers from India</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Work Permit</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- Permit Agencies List -->
+        <div id="tab-agency" class="w-full max-w-[900px] hidden">
+            <ul class="w-full">
+
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('agency-1')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-agency-1"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Early Childhood Care and Education Authority</span>
+                    </div>
+                    <div id="agency-1" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Per Capita Grant Claim</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('agency-2')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-agency-2"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Economic Development Board</span>
+                    </div>
+                    <div id="agency-2" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Film Rebate Scheme - Mauritius</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Freight Rebate Scheme</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Occupation/Residence Permit</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Request for Skilled Workers from India</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Support for Trade Promotion and Marketing Scheme</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Support for Trade Promotion and Marketing Scheme - Agro</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('agency-3')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-agency-3"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Local Authorities</span>
+                    </div>
+                    <div id="agency-3" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Building and Land Use Permit</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Occupation Certificate</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('agency-4')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-agency-4"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Mauritius Fire and Rescue Service</span>
+                    </div>
+                    <div id="agency-4" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Fire Certificate</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Fire Safety Plan</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('agency-5')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-agency-5"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Mauritius Qualifications Authority</span>
+                    </div>
+                    <div id="agency-5" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">MQA - Authorisation of Change for Training Institution</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">MQA - New Registration for Training Institution</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">MQA - Renewal of Registration for Training Institution</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('agency-6')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-agency-6"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Mauritius Revenue Authority</span>
+                    </div>
+                    <div id="agency-6" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Excise License</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('agency-7')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-agency-7"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Ministry of Agro-Industry, Food Security, Blue Economy and Fisheries</span>
+                    </div>
+                    <div id="agency-7" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Land Conversion Permit</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('agency-8')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-agency-8"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Ministry of Environment, Solid Waste Management and Climate Change</span>
+                    </div>
+                    <div id="agency-8" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Environment Impact Assessment (EIA) Licence</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Preliminary Environment Report (PER) Approval</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('agency-9')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-agency-9"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Ministry of Health and Wellness</span>
+                    </div>
+                    <div id="agency-9" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">DCCB - License to trade In Dangerous Chemicals</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">DCCB - Registration of Extremely Dangerous Chemical</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('agency-10')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-agency-10"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Ministry of Housing and Lands</span>
+                    </div>
+                    <div id="agency-10" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Morcellement Permit</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Property Acquisition</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('agency-11')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-agency-11"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Ministry of Labour and Industrial Relations</span>
+                    </div>
+                    <div id="agency-11" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Work Permit</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('agency-12')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-agency-12"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Passport and Immigration Office</span>
+                    </div>
+                    <div id="agency-12" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Dependent - Occupation Permit</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Premium Visa</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="border-b border-[#aaa] pb-5 mb-5 last:border-b-0">
+                    <div class="flex items-center group cursor-pointer select-none" onclick="toggleAccordion('agency-13')">
+                        <i class="fa-solid fa-caret-right text-black mr-2 text-[15px] transition-transform duration-200" id="icon-agency-13"></i>
+                        <span class="text-[#337ab7] text-[15px] font-medium">Tourism Authority</span>
+                    </div>
+                    <div id="agency-13" class="hidden mt-3 pl-5">
+                        <div class="flex justify-between items-start mb-4 last:mb-0">
+                            <div>
+                                <h4 class="text-[12px] font-bold text-[#111] mb-1">Pleasure Craft Licence</h4>
+                                <a href="#" class="block text-[12px] text-[#337ab7] hover:underline mb-[2px]">Legislation and useful information</a><br>
+                            </div>
+                            <div class="ml-4 pt-1">
+                                <button class="border border-[#7cb3d9] bg-white text-[#337ab7] hover:bg-[#337ab7] hover:text-white px-6 py-1 rounded-[3px] text-[12px] transition-colors shrink-0 uppercase tracking-wide">APPLY</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </main>
+
+    <!-- Main Footer -->
+    <footer class="bg-[#3a3a3a] w-full pt-12 pb-6 text-[#dcdcdc] text-[14px]">
+        <div class="max-w-screen-xl mx-auto px-4">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12 border-b border-gray-600 pb-10">
+                <!-- Col 1: Success Story -->
+                <div>
+                    <h4 class="text-white text-[16px] font-medium mb-4 uppercase">Success Story</h4>
+                    <div class="bg-white p-2 rounded inline-block">
+                        <!-- Placeholder for ISO Badge -->
+                        <img src="https://placehold.co/120x80/ffffff/505874?text=ISO+27001%0A2022" alt="MSECB Certified"
+                            class="block">
+                    </div>
+                </div>
+
+                <!-- Col 2: Government Directory -->
+                <div>
+                    <h4 class="text-white text-[16px] font-medium mb-4 uppercase">Government Directory</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Ministries</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Departments</a></li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Parastatal Organisations</a>
+                        </li>
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Other Bodies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Legislations -->
+                <div>
+                    <h4 class="text-white text-[16px] font-medium mb-4 uppercase">Legislations</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Justice & Defence</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Explore Mauritius -->
+                <div>
+                    <h4 class="text-white text-[16px] font-medium mb-4 uppercase">Explore Mauritius</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">History</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5: Media -->
+                <div>
+                    <h4 class="text-white text-[16px] font-medium mb-4 uppercase">Media</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-brand-primary transition-colors">Communiqués</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Sub Footer Links -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-[13px] gap-4">
+                <div class="flex flex-wrap gap-x-6 gap-y-2">
+                    <a href="#" class="hover:text-white transition-colors">News</a>
+                    <a href="#" class="hover:text-white transition-colors">E-Services</a>
+                    <a href="#" class="hover:text-white transition-colors">ISMS Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Supplier Relationship Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Contact Us</a>
+                </div>
+
+                <div class="text-right">
+                    <span class="mr-2">Helpdesk Contact:</span>
+                    <a href="#" class="text-brand-yellow hover:underline uppercase font-medium">CLICK HERE</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Base Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
