@@ -51,24 +51,48 @@
 
     <!-- Header Container -->
     <header class="bg-brand-white relative z-50">
-        <!-- Top Row (Logo, Title, Search, Links) -->
+                <!-- Top Row -->
         <div class="max-w-screen-xl mx-auto px-4 flex items-center h-[90px] justify-between">
+            
+            <!-- Mobile View Elements -->
+            
+            <!-- Mobile: Left Hamburger (3 dots) -->
+            <button id="open-mobile-menu" class="md:hidden text-[#337ab7] text-[24px] focus:outline-none p-2 bg-transparent">
+                <i class="fa-solid fa-ellipsis-v"></i>
+            </button>
 
-            <!-- Left: Logo & Title -->
-            <div class="flex items-center gap-6">
+            <!-- Mobile: Center Logo -->
+            <div class="md:hidden flex flex-col items-center justify-center flex-grow">
+                <div class="h-[45px] w-auto">
+                    <img src="assets/Coat+of+Arms+of+Mauritius.png" alt="Republic of Mauritius" class="h-full object-contain mx-auto">
+                </div>
+                <div class="text-[10px] text-[#333] mt-1 font-normal tracking-normal" style="font-family: 'Times New Roman', Times, serif;">Republic of Mauritius</div>
+            </div>
+
+            <!-- Mobile: Right Search Icon -->
+            <button class="md:hidden text-[#337ab7] text-[26px] focus:outline-none p-2 bg-transparent flex items-center justify-end">
+                <i class="fa-solid fa-search" style="-webkit-text-stroke: 1px #337ab7;"></i>
+            </button>
+
+
+            <!-- Desktop View Elements -->
+
+            <!-- Desktop: Left Logo & Title -->
+            <div class="hidden md:flex items-center gap-6">
                 <!-- Mauritius Logo -->
                 <div class="w-[72px] h-[60px] flex items-center justify-center overflow-hidden">
-                    <img src="assets/Coat+of+Arms+of+Mauritius.png"
-                        alt="Republic of Mauritius" class="h-full object-contain">
+                    <img src="assets/Coat+of+Arms+of+Mauritius.png" alt="Republic of Mauritius"
+                        class="h-full object-contain">
                 </div>
+                <!-- Site Name -->
                 <div class="text-[17px] font-normal tracking-wide text-[#222]">
                     Mauritius Business Licensing Platform
                 </div>
             </div>
 
-            <!-- Right: Search, Register, Login -->
-            <div class="flex items-center space-x-6">
-                <!-- Search Form -->
+            <!-- Desktop: Right Search, Register, Login -->
+            <div class="hidden md:flex items-center space-x-6">
+                <!-- Desktop Search Form -->
                 <div class="relative w-[300px]">
                     <div class="absolute inset-y-0 right-0 flex items-center pr-3">
                         <i class="fa-solid fa-search text-gray-400 text-sm"></i>
@@ -78,16 +102,17 @@
                         placeholder="Search">
                 </div>
 
+                <!-- Desktop Register/Login -->
                 <div class="flex space-x-4 text-[14px] font-medium text-[#337ab7]">
                     <a href="register.html" class="hover:text-[#1a7ab7] uppercase">REGISTER</a>
                     <a href="login.html" class="hover:text-[#1a7ab7] uppercase">LOGIN</a>
                 </div>
             </div>
-
+            
         </div>
 
         <!-- Bottom Row (Navigation Items) -->
-        <nav class="border-t border-[#e0e0e0] shadow-nav relative">
+        <nav class="hidden md:block border-t border-[#e0e0e0] shadow-nav relative">
             <div class="max-w-screen-xl mx-auto px-4 h-[45px] flex items-center justify-center space-x-12">
                 <!-- Nav Item: Home -->
                 <a href="index.html"
@@ -238,7 +263,80 @@
     </footer>
 
     <!-- Base Scripts -->
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[60] flex-col overflow-y-auto hidden">
+        <!-- Top bar -->
+        <div class="flex items-center justify-between px-4 h-[80px] border-b border-[#e0e0e0] shrink-0">
+            <!-- Close button -->
+            <button id="close-mobile-menu" class="text-[#337ab7] p-2 focus:outline-none bg-transparent hover:bg-gray-100 rounded-full transition-colors cursor-pointer flex items-center justify-center">
+                <i class="fa-regular fa-circle-xmark text-[28px]" style="font-weight: 300;"></i>
+            </button>
+            
+            <!-- Logo -->
+            <div class="h-[60px] flex items-center justify-center flex-grow">
+                <img src="assets/Coat+of+Arms+of+Mauritius.png" alt="Republic of Mauritius" class="h-full object-contain">
+            </div>
+
+            <!-- Search Icon -->
+            <button class="text-[#337ab7] p-2 focus:outline-none bg-transparent hover:bg-gray-100 rounded-full transition-colors cursor-pointer flex items-center justify-center">
+                <i class="fa-solid fa-magnifying-glass text-[24px]" style="-webkit-text-stroke: 1px #337ab7;"></i>
+            </button>
+        </div>
+
+        <!-- Menu Links -->
+        <div class="flex flex-col px-6 mt-4">
+            <a href="index.html" class="flex items-center justify-between py-4 border-b border-[#337ab7] text-[#337ab7] text-[17px] hover:bg-gray-50 transition-colors">
+                <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-home text-[20px]"></i>
+                    <span class="font-normal">Home</span>
+                </div>
+                <i class="fa-solid fa-caret-right text-[16px]"></i>
+            </a>
+
+            <a href="licensing.html" class="flex items-center justify-between py-4 border-b border-[#337ab7] text-[#337ab7] text-[17px] hover:bg-gray-50 transition-colors">
+                <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-file-lines text-[20px]"></i>
+                    <span class="font-normal">Licensing</span>
+                </div>
+                <i class="fa-solid fa-caret-right text-[16px]"></i>
+            </a>
+
+            <a href="search_permits.html" class="flex items-center justify-between py-4 border-b-4 border-[#337ab7] text-[#337ab7] text-[17px] hover:bg-gray-50 transition-colors">
+                <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-address-book text-[20px]"></i>
+                    <span class="font-normal">Search Permits</span>
+                </div>
+                <i class="fa-solid fa-caret-right text-[16px]"></i>
+            </a>
+
+            <a href="news.html" class="flex items-center justify-between py-4 border-b border-[#337ab7] text-[#337ab7] text-[17px] hover:bg-gray-50 transition-colors">
+                <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-newspaper text-[20px]"></i>
+                    <span class="font-normal">News</span>
+                </div>
+                <i class="fa-solid fa-caret-right text-[16px]"></i>
+            </a>
+
+            <a href="faqs.html" class="flex items-center justify-between py-4 border-b border-[#337ab7] text-[#337ab7] text-[17px] hover:bg-gray-50 transition-colors">
+                <div class="flex items-center gap-4">
+                    <i class="fa-solid fa-circle-info text-[20px]"></i>
+                    <span class="font-normal">FAQ's & Notices</span>
+                </div>
+                <i class="fa-solid fa-caret-right text-[16px]"></i>
+            </a>
+
+            <a href="register.html" class="py-5 border-b border-[#337ab7] text-[#337ab7] text-[17px] font-normal text-center uppercase hover:bg-gray-50 transition-colors">
+                REGISTER
+            </a>
+
+            <a href="login.html" class="py-5 border-b border-[#337ab7] text-[#337ab7] text-[17px] font-normal text-center uppercase hover:bg-gray-50 transition-colors">
+                LOGIN
+            </a>
+        </div>
+    </div>
+
 </body>
 
 </html>

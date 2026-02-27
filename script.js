@@ -89,4 +89,27 @@ function showFaqTab(tabName) {
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("Business Licensing Platform Loaded");
+
+    // Mobile Menu Toggle Logic (using event delegation for reliability)
+    document.addEventListener('click', (e) => {
+        // Open Menu
+        if (e.target.closest('#open-mobile-menu')) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Close Menu
+        if (e.target.closest('#close-mobile-menu')) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu) {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                document.body.style.overflow = '';
+            }
+        }
+    });
 });
