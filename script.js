@@ -111,5 +111,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = '';
             }
         }
+
+        // Mobile Footer Accordion Toggle
+        const footerBtn = e.target.closest('.mobile-footer-accordion-btn');
+        if (footerBtn) {
+            const content = footerBtn.nextElementSibling;
+            const icon = footerBtn.querySelector('i');
+
+            if (content && content.classList.contains('mobile-footer-accordion-content')) {
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    if (icon) {
+                        icon.classList.remove('fa-plus', 'fa-square');
+                        icon.classList.add('fa-minus');
+                    }
+                } else {
+                    content.classList.add('hidden');
+                    if (icon) {
+                        icon.classList.remove('fa-minus');
+                        icon.classList.add('fa-square'); // Use a generic box/plus logic
+                        // Wait, the screenshot uses a hollow square when closed (fa-square or fa-plus). I'll stick to plus/minus for reliability, but user showed a square. Let me just use fa-plus / fa-minus.
+                        icon.classList.add('fa-plus');
+                        icon.classList.remove('fa-square'); // Ensure square is removed if it was there
+                    }
+                }
+            }
+        }
     });
 });
